@@ -5,10 +5,11 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "server": "cd server && npm start",
-    "client": "cd client && npm run dev",
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install:all": "npm.cmd install && cd server && npm.cmd install && cd ../client && npm.cmd install"
+    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
   },
   "keywords": ["captcha", "hackathon", "useless-project", "express", "react", "mongodb"],
   "author": "Hackathon Team",
