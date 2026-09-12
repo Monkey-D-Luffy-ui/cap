@@ -15,7 +15,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static captcha assets if available locally
-app.use('/captcha', express.static(path.join(__dirname, '../client/public/captcha')));
+app.use('/captcha', express.static(path.join(__dirname, '../frontend/public/captcha')));
 
 // API Routes
 app.use('/api/applications', require('./routes/applicationRoutes'));
@@ -34,11 +34,11 @@ app.get('/api/health', (req, res) => {
 });
 
 // Serve frontend React app
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Catch-all route to serve React app for non-API requests (handles React Router frontend routing)
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
