@@ -33,15 +33,27 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Serve frontend in production
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// Serve frontend in production (only when running as standalone Node server, e.g. Render)
+if (!process.env.VERCEL) {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
-});
+  app.get('*', (req, res) => {
+    const indexPath = path.join(__dirname, '../client/dist', 'index.html');
+    if (require('fs').existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      res.status(404).send('API endpoint not found');
+    }
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`[CAPTCHA HELL Backend] Running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL && require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`[CAPTCHA HELL Backend] Running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
+
