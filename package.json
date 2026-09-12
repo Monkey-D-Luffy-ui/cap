@@ -2,19 +2,19 @@
   "name": "captcha-hell",
   "version": "1.0.0",
   "description": "CAPTCHA HELL™ - National Academic Examination Portal (Infinite CAPTCHA Hackathon Project)",
-  "main": "server/server.js",
+  "main": "client/src/main.jsx",
   "scripts": {
-    "start": "node server/server.js",
-    "server": "npm start --prefix server",
-    "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
-    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+    "start": "npm run preview --prefix client",
+    "dev": "npm run dev --prefix client",
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
-  "keywords": ["captcha", "hackathon", "useless-project", "express", "react", "mongodb"],
+  "keywords": [
+    "captcha",
+    "hackathon",
+    "useless-project",
+    "react",
+    "vite"
+  ],
   "author": "Hackathon Team",
-  "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "license": "MIT"
 }

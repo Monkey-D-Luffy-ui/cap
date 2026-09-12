@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/captcha/:path*",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/((?!api/|captcha/|assets/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
