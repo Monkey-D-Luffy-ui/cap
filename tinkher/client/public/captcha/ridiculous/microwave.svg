@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <rect width="200" height="200" fill="#f0f9ff"/>
+  <!-- Antennas -->
+  <line x1="60" y1="50" x2="40" y2="20" stroke="#0284c7" stroke-width="4"/>
+  <circle cx="40" cy="20" r="6" fill="#0284c7"/>
+  <line x1="140" y1="50" x2="160" y2="20" stroke="#0284c7" stroke-width="4"/>
+  <circle cx="160" cy="20" r="6" fill="#0284c7"/>
+  <!-- Microwave body -->
+  <rect x="30" y="50" width="140" height="90" rx="10" fill="#1e293b"/>
+  <rect x="42" y="62" width="85" height="66" fill="#0f172a" rx="4"/>
+  <rect x="135" y="62" width="25" height="66" fill="#334155" rx="4"/>
+  <!-- Wi-Fi Waves -->
+  <path d="M 70 85 Q 85 75 100 85" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <path d="M 75 95 Q 85 88 95 95" stroke="#38bdf8" stroke-width="3" fill="none"/>
+</svg>
