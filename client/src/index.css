@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+
+  html,
+  body {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom subtle academic portal styling */
+.naep-gradient-header {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+}
+
+.naep-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  color: #f8fafc;
+}
+
+.captcha-tile {
+  transition: all 0.15s ease-in-out;
+}
+
+.captcha-tile:hover {
+  transform: scale(1.02);
+}
+
+.captcha-tile.selected {
+  outline: 4px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* Shimmer animation for suspicious progress bar */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #2563eb 25%, #60a5fa 50%, #2563eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite linear;
+}
